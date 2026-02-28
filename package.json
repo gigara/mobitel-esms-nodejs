@@ -1,0 +1,51 @@
+{
+  "name": "mobitel-esms",
+  "author": "Gigara",
+  "version": "1.0.0",
+  "description": "A Node.js client for Mobitel's eSMS Enterprise API, providing functions to send SMS messages, receive incoming messages, and check delivery status.",
+  "main": "./src/index.js",
+  "module": "./src/index.mjs",
+  "types": "./src/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.ts",
+      "import": "./src/index.mjs",
+      "require": "./src/index.js",
+      "default": "./src/index.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "bin": {
+    "esms-cli": "./bin/esms-cli.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "README.md",
+    "LICENSE"
+  ],
+  "type": "commonjs",
+  "scripts": {
+    "check": "node --check src/index.js && node --check src/index.mjs && node --check sample/sampleCode.js && node --check bin/esms-cli.js",
+    "start": "node sample/sampleCode.js",
+    "pack:check": "npm pack --dry-run"
+  },
+  "keywords": [
+    "sms",
+    "mobitel",
+    "esms",
+    "sms-gateway",
+    "enterprise-sms"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "sideEffects": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "soap": "^0.45.0"
+  }
+}
